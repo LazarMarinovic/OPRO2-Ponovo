@@ -38,4 +38,11 @@ public class MealRepository {
         MealOrder mo = new MealOrder(meal, order);
         return em.merge(mo);
     }
+
+    public Meal findMealById(Long id) {
+        if (id == null) {
+            return null;
+        }
+        return em.find(Meal.class, id);
+    }
 }

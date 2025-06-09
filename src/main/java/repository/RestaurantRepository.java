@@ -16,7 +16,8 @@ public class RestaurantRepository {
 
     @Transactional
     public Restaurant createRestaurant(Restaurant r) {
-        return em.merge(r);
+        em.persist(r);
+        return r;
     }
 
     @Transactional
